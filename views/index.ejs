@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars Index</title>
+</head>
+<body>
+    <h1>Cars Index</h1>
+    <ul>
+        <%cars.forEach((el, i) => { %>
+            <li> <a href="http://localhost:3000/cars/<%=i%>"> <%=el.year%> <%=el.make%> <%=el.model%> </a> </li>
+        <% }) %>
+    </ul>
+    <button><a href="http://localhost:3000/cars/new">New Car</a></button>
+</body>
+</html>

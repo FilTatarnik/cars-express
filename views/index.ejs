@@ -2,13 +2,20 @@
 <html>
 <head>
     <title>Cars Index</title>
+      <link rel="stylesheet" type="text/css" href="/assets/styles.css">
 </head>
 <body>
     <h1>Cars Index</h1>
     <ul>
         <%cars.forEach((el, i) => { %>
             <li> <a href="http://localhost:3000/cars/<%=i%>"> <%=el.year%> <%=el.make%> <%=el.model%> </a> </li>
+
+                  <form action="/cars/<%=i%>?_method=DELETE" method="POST">
+                    <input type="submit" value="delete">
+                  </form>
+
         <% }) %>
+
     </ul>
     <button><a href="http://localhost:3000/cars/new">New Car</a></button>
 </body>

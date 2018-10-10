@@ -8,13 +8,14 @@ const methodOverride = require('method-override');
 
 const carsController = require('./controllers/cars');
 
+app.use('/assets', express.static('assets'));
 
 
 
 
 
 
-app.use(methodOverride('_moethod'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/cars', carsController);

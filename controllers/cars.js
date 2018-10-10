@@ -9,4 +9,10 @@ router.get('/', (req, res)=>{
 	})
 })
 
+router.delete('/:id', (req, res) => {
+  console.log(req.params.id, ' id in delete route');
+  Cars.splice(req.params.id, 1);
+  res.redirect('/cars');
+});
+
 module.exports = router;

@@ -3,12 +3,16 @@
 <head>
 
   <title></title>
+  		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/assets/styles.css">
 
 </head>
 <body>
   <h1>Car Show Page</h1>
    <%= cars.make %>  <%= cars.model%> <%= cars.year%>
+   <br>
+   <a href="/cars/<%=i%>/edit">Edit <%=cars.make%> <%=cars.model%></a>
+   <br>
    <br>
    <a href="http://localhost:3000/cars">Home</a>
 

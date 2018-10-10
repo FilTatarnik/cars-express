@@ -16,6 +16,7 @@ router.get('/new', (req, res)=>{
 router.get('/:index', (req, res)=>{
 	res.render('show.ejs', {
 		cars: Cars[req.params.index],
+		i: req.params.index
 	})
 })
 
@@ -30,4 +31,16 @@ router.delete('/:id', (req, res) => {
   res.redirect('/cars');
 });
 
+router.get('/:id/edit', (req, res) => {
+	res.render('edit.ejs', {
+		car: Cars[req.params.id],
+		id: req.params.id
+	})
+})
+
+router.put('/:id', (req, res) => {
+	res.redirect('/cars');
+	Cars[req.params.id] = req.body
+})
 module.exports = router;
+
